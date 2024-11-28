@@ -1,0 +1,572 @@
+2023-09-20T15:58:59.773+05:30  INFO 23824 --- [main] c.e.bookmyshow.BookmyshowApplication     : Starting BookmyshowApplication using Java 17.0.3 with PID 23824 (C:\X-Corps\x-corps-proj\SeatScreen\target\classes started by abhatia1 in C:\X-Corps\x-corps-proj\SeatScreen)
+2023-09-20T15:58:59.786+05:30  INFO 23824 --- [main] c.e.bookmyshow.BookmyshowApplication     : No active profile set, falling back to 1 default profile: "default"
+2023-09-20T15:59:00.609+05:30 ERROR 23824 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalStateException: Error processing condition on org.springframework.boot.autoconfigure.data.mongo.MongoDataConfiguration.mongoManagedTypes
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:60) ~[spring-boot-autoconfigure-3.1.3.jar:3.1.3]
+	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:108) ~[spring-context-6.0.11.jar:6.0.11]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForBeanMethod(ConfigurationClassBeanDefinitionReader.java:183) ~[spring-context-6.0.11.jar:6.0.11]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:144) ~[spring-context-6.0.11.jar:6.0.11]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:120) ~[spring-context-6.0.11.jar:6.0.11]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:427) ~[spring-context-6.0.11.jar:6.0.11]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:287) ~[spring-context-6.0.11.jar:6.0.11]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:344) ~[spring-context-6.0.11.jar:6.0.11]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:115) ~[spring-context-6.0.11.jar:6.0.11]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:771) ~[spring-context-6.0.11.jar:6.0.11]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:589) ~[spring-context-6.0.11.jar:6.0.11]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.1.3.jar:3.1.3]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734) ~[spring-boot-3.1.3.jar:3.1.3]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:436) ~[spring-boot-3.1.3.jar:3.1.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312) ~[spring-boot-3.1.3.jar:3.1.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-3.1.3.jar:3.1.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-3.1.3.jar:3.1.3]
+	at com.example.bookmyshow.BookmyshowApplication.main(BookmyshowApplication.java:10) ~[classes/:na]
+Caused by: java.lang.IllegalStateException: @ConditionalOnMissingBean did not specify a bean using type, name or annotation and the attempt to deduce the bean's type failed
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition$Spec.validate(OnBeanCondition.java:489) ~[spring-boot-autoconfigure-3.1.3.jar:3.1.3]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition$Spec.<init>(OnBeanCondition.java:438) ~[spring-boot-autoconfigure-3.1.3.jar:3.1.3]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchOutcome(OnBeanCondition.java:155) ~[spring-boot-autoconfigure-3.1.3.jar:3.1.3]
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:47) ~[spring-boot-autoconfigure-3.1.3.jar:3.1.3]
+	... 17 common frames omitted
+Caused by: org.springframework.boot.autoconfigure.condition.OnBeanCondition$BeanTypeDeductionException: Failed to deduce bean type for org.springframework.boot.autoconfigure.data.mongo.MongoDataConfiguration.mongoManagedTypes
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition$Spec.deducedBeanTypeForBeanMethod(OnBeanCondition.java:519) ~[spring-boot-autoconfigure-3.1.3.jar:3.1.3]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition$Spec.deducedBeanType(OnBeanCondition.java:508) ~[spring-boot-autoconfigure-3.1.3.jar:3.1.3]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition$Spec.<init>(OnBeanCondition.java:431) ~[spring-boot-autoconfigure-3.1.3.jar:3.1.3]
+	... 19 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.springframework.data.mongodb.MongoManagedTypes
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:467) ~[na:na]
+	at org.springframework.boot.autoconfigure.condition.FilteringSpringBootCondition.resolve(FilteringSpringBootCondition.java:108) ~[spring-boot-autoconfigure-3.1.3.jar:3.1.3]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition$Spec.getReturnType(OnBeanCondition.java:527) ~[spring-boot-autoconfigure-3.1.3.jar:3.1.3]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition$Spec.deducedBeanTypeForBeanMethod(OnBeanCondition.java:515) ~[spring-boot-autoconfigure-3.1.3.jar:3.1.3]
+	... 21 common frames omitted
+
+2023-09-20T15:59:25.658+05:30  INFO 20464 --- [main] c.e.bookmyshow.BookmyshowApplication     : Starting BookmyshowApplication using Java 17.0.3 with PID 20464 (C:\X-Corps\x-corps-proj\SeatScreen\target\classes started by abhatia1 in C:\X-Corps\x-corps-proj\SeatScreen)
+2023-09-20T15:59:25.661+05:30  INFO 20464 --- [main] c.e.bookmyshow.BookmyshowApplication     : No active profile set, falling back to 1 default profile: "default"
+2023-09-20T15:59:26.942+05:30  INFO 20464 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-09-20T15:59:26.952+05:30  INFO 20464 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-20T15:59:26.953+05:30  INFO 20464 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-09-20T15:59:27.085+05:30  INFO 20464 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-09-20T15:59:27.086+05:30  INFO 20464 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1373 ms
+2023-09-20T15:59:27.167+05:30  WARN 20464 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'seatBookingController': Unsatisfied dependency expressed through field 'showSeatService': Error creating bean with name 'showSeatServiceImpl': Unsatisfied dependency expressed through field 'showSeatRepository': No qualifying bean of type 'com.example.bookmyshow.repository.ShowSeatRepo' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2023-09-20T15:59:27.170+05:30  INFO 20464 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-09-20T15:59:27.190+05:30  INFO 20464 --- [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-09-20T15:59:27.218+05:30 ERROR 20464 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field showSeatRepository in com.example.bookmyshow.service.ShowSeatServiceImpl required a bean of type 'com.example.bookmyshow.repository.ShowSeatRepo' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.example.bookmyshow.repository.ShowSeatRepo' in your configuration.
+
+2023-09-20T16:01:29.626+05:30  INFO 11840 --- [main] c.e.bookmyshow.BookmyshowApplication     : Starting BookmyshowApplication using Java 17.0.3 with PID 11840 (C:\X-Corps\x-corps-proj\SeatScreen\target\classes started by abhatia1 in C:\X-Corps\x-corps-proj\SeatScreen)
+2023-09-20T16:01:29.629+05:30  INFO 11840 --- [main] c.e.bookmyshow.BookmyshowApplication     : No active profile set, falling back to 1 default profile: "default"
+2023-09-20T16:01:30.859+05:30  INFO 11840 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-09-20T16:01:30.869+05:30  INFO 11840 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-20T16:01:30.870+05:30  INFO 11840 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-09-20T16:01:30.987+05:30  INFO 11840 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-09-20T16:01:30.993+05:30  INFO 11840 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1296 ms
+2023-09-20T16:01:31.061+05:30  WARN 11840 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'seatBookingController': Unsatisfied dependency expressed through field 'showSeatService': Error creating bean with name 'showSeatServiceImpl': Unsatisfied dependency expressed through field 'showSeatRepository': No qualifying bean of type 'com.example.bookmyshow.repository.ShowSeatRepo' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2023-09-20T16:01:31.066+05:30  INFO 11840 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-09-20T16:01:31.084+05:30  INFO 11840 --- [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-09-20T16:01:31.113+05:30 ERROR 11840 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field showSeatRepository in com.example.bookmyshow.service.ShowSeatServiceImpl required a bean of type 'com.example.bookmyshow.repository.ShowSeatRepo' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.example.bookmyshow.repository.ShowSeatRepo' in your configuration.
+
+2023-09-20T16:02:23.057+05:30  INFO 19348 --- [main] c.e.bookmyshow.BookmyshowApplication     : Starting BookmyshowApplication using Java 17.0.3 with PID 19348 (C:\X-Corps\x-corps-proj\SeatScreen\target\classes started by abhatia1 in C:\X-Corps\x-corps-proj\SeatScreen)
+2023-09-20T16:02:23.060+05:30  INFO 19348 --- [main] c.e.bookmyshow.BookmyshowApplication     : No active profile set, falling back to 1 default profile: "default"
+2023-09-20T16:02:24.439+05:30  INFO 19348 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-09-20T16:02:24.450+05:30  INFO 19348 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-20T16:02:24.451+05:30  INFO 19348 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-09-20T16:02:24.569+05:30  INFO 19348 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-09-20T16:02:24.570+05:30  INFO 19348 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1452 ms
+2023-09-20T16:02:24.639+05:30  WARN 19348 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'seatBookingController': Unsatisfied dependency expressed through field 'showSeatService': Error creating bean with name 'showSeatServiceImpl': Unsatisfied dependency expressed through field 'showSeatRepository': No qualifying bean of type 'com.example.bookmyshow.repository.ShowSeatRepo' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2023-09-20T16:02:24.643+05:30  INFO 19348 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-09-20T16:02:24.664+05:30  INFO 19348 --- [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-09-20T16:02:24.698+05:30 ERROR 19348 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field showSeatRepository in com.example.bookmyshow.service.ShowSeatServiceImpl required a bean of type 'com.example.bookmyshow.repository.ShowSeatRepo' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.example.bookmyshow.repository.ShowSeatRepo' in your configuration.
+
+2023-09-20T16:05:36.089+05:30  INFO 2328 --- [main] c.e.bookmyshow.BookmyshowApplication     : Starting BookmyshowApplication using Java 17.0.3 with PID 2328 (C:\X-Corps\x-corps-proj\SeatScreen\target\classes started by abhatia1 in C:\X-Corps\x-corps-proj\SeatScreen)
+2023-09-20T16:05:36.092+05:30  INFO 2328 --- [main] c.e.bookmyshow.BookmyshowApplication     : No active profile set, falling back to 1 default profile: "default"
+2023-09-20T16:05:37.201+05:30  INFO 2328 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-09-20T16:05:37.210+05:30  INFO 2328 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-20T16:05:37.210+05:30  INFO 2328 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-09-20T16:05:37.314+05:30  INFO 2328 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-09-20T16:05:37.321+05:30  INFO 2328 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1177 ms
+2023-09-20T16:05:37.385+05:30  WARN 2328 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'seatBookingController': Unsatisfied dependency expressed through field 'showSeatService': Error creating bean with name 'showSeatServiceImpl': Unsatisfied dependency expressed through field 'showSeatRepository': No qualifying bean of type 'com.example.bookmyshow.repository.ShowSeatRepo' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2023-09-20T16:05:37.389+05:30  INFO 2328 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-09-20T16:05:37.404+05:30  INFO 2328 --- [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-09-20T16:05:37.431+05:30 ERROR 2328 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field showSeatRepository in com.example.bookmyshow.service.ShowSeatServiceImpl required a bean of type 'com.example.bookmyshow.repository.ShowSeatRepo' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.example.bookmyshow.repository.ShowSeatRepo' in your configuration.
+
+2023-09-20T16:06:17.544+05:30  INFO 27932 --- [main] c.e.bookmyshow.BookmyshowApplication     : Starting BookmyshowApplication using Java 17.0.3 with PID 27932 (C:\X-Corps\x-corps-proj\SeatScreen\target\classes started by abhatia1 in C:\X-Corps\x-corps-proj\SeatScreen)
+2023-09-20T16:06:17.547+05:30  INFO 27932 --- [main] c.e.bookmyshow.BookmyshowApplication     : No active profile set, falling back to 1 default profile: "default"
+2023-09-20T16:06:18.658+05:30  INFO 27932 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-09-20T16:06:18.665+05:30  INFO 27932 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-20T16:06:18.666+05:30  INFO 27932 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-09-20T16:06:18.794+05:30  INFO 27932 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-09-20T16:06:18.794+05:30  INFO 27932 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1190 ms
+2023-09-20T16:06:18.864+05:30  WARN 27932 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'seatBookingController': Unsatisfied dependency expressed through field 'showSeatService': Error creating bean with name 'showSeatServiceImpl': Unsatisfied dependency expressed through field 'showSeatRepository': No qualifying bean of type 'com.example.bookmyshow.repository.ShowSeatRepo' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2023-09-20T16:06:18.868+05:30  INFO 27932 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-09-20T16:06:18.888+05:30  INFO 27932 --- [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-09-20T16:06:18.918+05:30 ERROR 27932 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field showSeatRepository in com.example.bookmyshow.service.ShowSeatServiceImpl required a bean of type 'com.example.bookmyshow.repository.ShowSeatRepo' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.example.bookmyshow.repository.ShowSeatRepo' in your configuration.
+
+2023-09-20T16:07:13.865+05:30  INFO 23580 --- [main] c.e.bookmyshow.BookmyshowApplication     : Starting BookmyshowApplication using Java 17.0.3 with PID 23580 (C:\X-Corps\x-corps-proj\SeatScreen\target\classes started by abhatia1 in C:\X-Corps\x-corps-proj\SeatScreen)
+2023-09-20T16:07:13.869+05:30  INFO 23580 --- [main] c.e.bookmyshow.BookmyshowApplication     : No active profile set, falling back to 1 default profile: "default"
+2023-09-20T16:07:14.933+05:30  INFO 23580 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-09-20T16:07:14.942+05:30  INFO 23580 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-20T16:07:14.942+05:30  INFO 23580 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-09-20T16:07:15.061+05:30  INFO 23580 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-09-20T16:07:15.061+05:30  INFO 23580 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1139 ms
+2023-09-20T16:07:15.415+05:30  WARN 23580 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Ambiguous mapping. Cannot map 'seatBookingController' method 
+com.example.bookmyshow.controller.SeatBookingController#deleteShowSeat(String)
+to {DELETE [/showSeats/{id}]}: There is already 'seatBookingController' bean method
+com.example.bookmyshow.controller.SeatBookingController#deleteScreenSeat(String) mapped.
+2023-09-20T16:07:15.419+05:30  INFO 23580 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-09-20T16:07:15.434+05:30  INFO 23580 --- [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-09-20T16:07:15.448+05:30 ERROR 23580 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Ambiguous mapping. Cannot map 'seatBookingController' method 
+com.example.bookmyshow.controller.SeatBookingController#deleteShowSeat(String)
+to {DELETE [/showSeats/{id}]}: There is already 'seatBookingController' bean method
+com.example.bookmyshow.controller.SeatBookingController#deleteScreenSeat(String) mapped.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1770) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:973) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:942) ~[spring-context-6.0.11.jar:6.0.11]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:608) ~[spring-context-6.0.11.jar:6.0.11]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.1.3.jar:3.1.3]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734) ~[spring-boot-3.1.3.jar:3.1.3]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:436) ~[spring-boot-3.1.3.jar:3.1.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312) ~[spring-boot-3.1.3.jar:3.1.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-3.1.3.jar:3.1.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-3.1.3.jar:3.1.3]
+	at com.example.bookmyshow.BookmyshowApplication.main(BookmyshowApplication.java:12) ~[classes/:na]
+Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'seatBookingController' method 
+com.example.bookmyshow.controller.SeatBookingController#deleteShowSeat(String)
+to {DELETE [/showSeats/{id}]}: There is already 'seatBookingController' bean method
+com.example.bookmyshow.controller.SeatBookingController#deleteScreenSeat(String) mapped.
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.validateMethodMapping(AbstractHandlerMethodMapping.java:667) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:633) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:331) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:441) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:76) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lambda$detectHandlerMethods$2(AbstractHandlerMethodMapping.java:298) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:721) ~[na:na]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.detectHandlerMethods(AbstractHandlerMethodMapping.java:296) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.processCandidateBean(AbstractHandlerMethodMapping.java:265) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.initHandlerMethods(AbstractHandlerMethodMapping.java:224) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.afterPropertiesSet(AbstractHandlerMethodMapping.java:212) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.afterPropertiesSet(RequestMappingHandlerMapping.java:225) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1817) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1766) ~[spring-beans-6.0.11.jar:6.0.11]
+	... 16 common frames omitted
+
+2023-09-20T16:08:01.130+05:30  INFO 14028 --- [main] c.e.bookmyshow.BookmyshowApplication     : Starting BookmyshowApplication using Java 17.0.3 with PID 14028 (C:\X-Corps\x-corps-proj\SeatScreen\target\classes started by abhatia1 in C:\X-Corps\x-corps-proj\SeatScreen)
+2023-09-20T16:08:01.133+05:30  INFO 14028 --- [main] c.e.bookmyshow.BookmyshowApplication     : No active profile set, falling back to 1 default profile: "default"
+2023-09-20T16:08:02.280+05:30  INFO 14028 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-09-20T16:08:02.291+05:30  INFO 14028 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-20T16:08:02.293+05:30  INFO 14028 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-09-20T16:08:02.418+05:30  INFO 14028 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-09-20T16:08:02.419+05:30  INFO 14028 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1232 ms
+2023-09-20T16:08:02.755+05:30  WARN 14028 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Ambiguous mapping. Cannot map 'seatBookingController' method 
+com.example.bookmyshow.controller.SeatBookingController#deleteScreenSeat(String)
+to {DELETE [/showSeats/{id}]}: There is already 'seatBookingController' bean method
+com.example.bookmyshow.controller.SeatBookingController#deleteShowSeat(String) mapped.
+2023-09-20T16:08:02.758+05:30  INFO 14028 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-09-20T16:08:02.774+05:30  INFO 14028 --- [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-09-20T16:08:02.789+05:30 ERROR 14028 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Ambiguous mapping. Cannot map 'seatBookingController' method 
+com.example.bookmyshow.controller.SeatBookingController#deleteScreenSeat(String)
+to {DELETE [/showSeats/{id}]}: There is already 'seatBookingController' bean method
+com.example.bookmyshow.controller.SeatBookingController#deleteShowSeat(String) mapped.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1770) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:973) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:942) ~[spring-context-6.0.11.jar:6.0.11]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:608) ~[spring-context-6.0.11.jar:6.0.11]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.1.3.jar:3.1.3]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734) ~[spring-boot-3.1.3.jar:3.1.3]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:436) ~[spring-boot-3.1.3.jar:3.1.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312) ~[spring-boot-3.1.3.jar:3.1.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-3.1.3.jar:3.1.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-3.1.3.jar:3.1.3]
+	at com.example.bookmyshow.BookmyshowApplication.main(BookmyshowApplication.java:12) ~[classes/:na]
+Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'seatBookingController' method 
+com.example.bookmyshow.controller.SeatBookingController#deleteScreenSeat(String)
+to {DELETE [/showSeats/{id}]}: There is already 'seatBookingController' bean method
+com.example.bookmyshow.controller.SeatBookingController#deleteShowSeat(String) mapped.
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.validateMethodMapping(AbstractHandlerMethodMapping.java:667) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:633) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:331) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:441) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:76) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lambda$detectHandlerMethods$2(AbstractHandlerMethodMapping.java:298) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:721) ~[na:na]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.detectHandlerMethods(AbstractHandlerMethodMapping.java:296) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.processCandidateBean(AbstractHandlerMethodMapping.java:265) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.initHandlerMethods(AbstractHandlerMethodMapping.java:224) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.afterPropertiesSet(AbstractHandlerMethodMapping.java:212) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.afterPropertiesSet(RequestMappingHandlerMapping.java:225) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1817) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1766) ~[spring-beans-6.0.11.jar:6.0.11]
+	... 16 common frames omitted
+
+2023-09-20T16:08:40.415+05:30  INFO 33504 --- [main] c.e.bookmyshow.BookmyshowApplication     : Starting BookmyshowApplication using Java 17.0.3 with PID 33504 (C:\X-Corps\x-corps-proj\SeatScreen\target\classes started by abhatia1 in C:\X-Corps\x-corps-proj\SeatScreen)
+2023-09-20T16:08:40.418+05:30  INFO 33504 --- [main] c.e.bookmyshow.BookmyshowApplication     : No active profile set, falling back to 1 default profile: "default"
+2023-09-20T16:08:41.507+05:30  INFO 33504 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-09-20T16:08:41.520+05:30  INFO 33504 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-20T16:08:41.520+05:30  INFO 33504 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-09-20T16:08:41.648+05:30  INFO 33504 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-09-20T16:08:41.649+05:30  INFO 33504 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1173 ms
+2023-09-20T16:08:41.952+05:30  WARN 33504 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Ambiguous mapping. Cannot map 'seatBookingController' method 
+com.example.bookmyshow.controller.SeatBookingController#deleteScreenSeat(String)
+to {DELETE [/showSeats/{id}]}: There is already 'seatBookingController' bean method
+com.example.bookmyshow.controller.SeatBookingController#deleteShowSeat(String) mapped.
+2023-09-20T16:08:41.955+05:30  INFO 33504 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-09-20T16:08:41.966+05:30  INFO 33504 --- [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-09-20T16:08:41.986+05:30 ERROR 33504 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Ambiguous mapping. Cannot map 'seatBookingController' method 
+com.example.bookmyshow.controller.SeatBookingController#deleteScreenSeat(String)
+to {DELETE [/showSeats/{id}]}: There is already 'seatBookingController' bean method
+com.example.bookmyshow.controller.SeatBookingController#deleteShowSeat(String) mapped.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1770) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:973) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:942) ~[spring-context-6.0.11.jar:6.0.11]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:608) ~[spring-context-6.0.11.jar:6.0.11]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.1.3.jar:3.1.3]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734) ~[spring-boot-3.1.3.jar:3.1.3]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:436) ~[spring-boot-3.1.3.jar:3.1.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312) ~[spring-boot-3.1.3.jar:3.1.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-3.1.3.jar:3.1.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-3.1.3.jar:3.1.3]
+	at com.example.bookmyshow.BookmyshowApplication.main(BookmyshowApplication.java:12) ~[classes/:na]
+Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'seatBookingController' method 
+com.example.bookmyshow.controller.SeatBookingController#deleteScreenSeat(String)
+to {DELETE [/showSeats/{id}]}: There is already 'seatBookingController' bean method
+com.example.bookmyshow.controller.SeatBookingController#deleteShowSeat(String) mapped.
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.validateMethodMapping(AbstractHandlerMethodMapping.java:667) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:633) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:331) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:441) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:76) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lambda$detectHandlerMethods$2(AbstractHandlerMethodMapping.java:298) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:721) ~[na:na]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.detectHandlerMethods(AbstractHandlerMethodMapping.java:296) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.processCandidateBean(AbstractHandlerMethodMapping.java:265) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.initHandlerMethods(AbstractHandlerMethodMapping.java:224) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.afterPropertiesSet(AbstractHandlerMethodMapping.java:212) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.afterPropertiesSet(RequestMappingHandlerMapping.java:225) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1817) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1766) ~[spring-beans-6.0.11.jar:6.0.11]
+	... 16 common frames omitted
+
+2023-09-20T16:09:32.233+05:30  INFO 13364 --- [main] c.e.bookmyshow.BookmyshowApplication     : Starting BookmyshowApplication using Java 17.0.3 with PID 13364 (C:\X-Corps\x-corps-proj\SeatScreen\target\classes started by abhatia1 in C:\X-Corps\x-corps-proj\SeatScreen)
+2023-09-20T16:09:32.237+05:30  INFO 13364 --- [main] c.e.bookmyshow.BookmyshowApplication     : No active profile set, falling back to 1 default profile: "default"
+2023-09-20T16:09:33.356+05:30  INFO 13364 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-09-20T16:09:33.368+05:30  INFO 13364 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-20T16:09:33.368+05:30  INFO 13364 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-09-20T16:09:33.496+05:30  INFO 13364 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-09-20T16:09:33.497+05:30  INFO 13364 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1206 ms
+2023-09-20T16:09:33.848+05:30  WARN 13364 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Ambiguous mapping. Cannot map 'seatBookingController' method 
+com.example.bookmyshow.controller.SeatBookingController#deleteShowSeat(String)
+to {DELETE [/showSeats/{id}]}: There is already 'seatBookingController' bean method
+com.example.bookmyshow.controller.SeatBookingController#deleteScreenSeat(String) mapped.
+2023-09-20T16:09:33.852+05:30  INFO 13364 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-09-20T16:09:33.866+05:30  INFO 13364 --- [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-09-20T16:09:33.883+05:30 ERROR 13364 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Ambiguous mapping. Cannot map 'seatBookingController' method 
+com.example.bookmyshow.controller.SeatBookingController#deleteShowSeat(String)
+to {DELETE [/showSeats/{id}]}: There is already 'seatBookingController' bean method
+com.example.bookmyshow.controller.SeatBookingController#deleteScreenSeat(String) mapped.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1770) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:973) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:942) ~[spring-context-6.0.11.jar:6.0.11]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:608) ~[spring-context-6.0.11.jar:6.0.11]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.1.3.jar:3.1.3]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734) ~[spring-boot-3.1.3.jar:3.1.3]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:436) ~[spring-boot-3.1.3.jar:3.1.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312) ~[spring-boot-3.1.3.jar:3.1.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-3.1.3.jar:3.1.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-3.1.3.jar:3.1.3]
+	at com.example.bookmyshow.BookmyshowApplication.main(BookmyshowApplication.java:12) ~[classes/:na]
+Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'seatBookingController' method 
+com.example.bookmyshow.controller.SeatBookingController#deleteShowSeat(String)
+to {DELETE [/showSeats/{id}]}: There is already 'seatBookingController' bean method
+com.example.bookmyshow.controller.SeatBookingController#deleteScreenSeat(String) mapped.
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.validateMethodMapping(AbstractHandlerMethodMapping.java:667) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:633) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:331) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:441) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:76) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lambda$detectHandlerMethods$2(AbstractHandlerMethodMapping.java:298) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:721) ~[na:na]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.detectHandlerMethods(AbstractHandlerMethodMapping.java:296) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.processCandidateBean(AbstractHandlerMethodMapping.java:265) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.initHandlerMethods(AbstractHandlerMethodMapping.java:224) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.afterPropertiesSet(AbstractHandlerMethodMapping.java:212) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.afterPropertiesSet(RequestMappingHandlerMapping.java:225) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1817) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1766) ~[spring-beans-6.0.11.jar:6.0.11]
+	... 16 common frames omitted
+
+2023-09-20T16:10:10.432+05:30  INFO 26132 --- [main] c.e.bookmyshow.BookmyshowApplication     : Starting BookmyshowApplication using Java 17.0.3 with PID 26132 (C:\X-Corps\x-corps-proj\SeatScreen\target\classes started by abhatia1 in C:\X-Corps\x-corps-proj\SeatScreen)
+2023-09-20T16:10:10.436+05:30  INFO 26132 --- [main] c.e.bookmyshow.BookmyshowApplication     : No active profile set, falling back to 1 default profile: "default"
+2023-09-20T16:10:11.572+05:30  INFO 26132 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-09-20T16:10:11.582+05:30  INFO 26132 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-20T16:10:11.583+05:30  INFO 26132 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-09-20T16:10:11.693+05:30  INFO 26132 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-09-20T16:10:11.694+05:30  INFO 26132 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1208 ms
+2023-09-20T16:10:11.758+05:30  WARN 26132 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'seatBookingController' defined in file [C:\X-Corps\x-corps-proj\SeatScreen\target\classes\com\example\bookmyshow\controller\SeatBookingController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'showSeatServiceImpl' defined in file [C:\X-Corps\x-corps-proj\SeatScreen\target\classes\com\example\bookmyshow\service\ShowSeatServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'com.example.bookmyshow.repository.ShowSeatRepo' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2023-09-20T16:10:11.761+05:30  INFO 26132 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-09-20T16:10:11.775+05:30  INFO 26132 --- [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-09-20T16:10:11.801+05:30 ERROR 26132 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.example.bookmyshow.service.ShowSeatServiceImpl required a bean of type 'com.example.bookmyshow.repository.ShowSeatRepo' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.example.bookmyshow.repository.ShowSeatRepo' in your configuration.
+
+2023-09-20T16:11:07.557+05:30  INFO 18996 --- [main] c.e.bookmyshow.BookmyshowApplication     : Starting BookmyshowApplication using Java 17.0.3 with PID 18996 (C:\X-Corps\x-corps-proj\SeatScreen\target\classes started by abhatia1 in C:\X-Corps\x-corps-proj\SeatScreen)
+2023-09-20T16:11:07.560+05:30  INFO 18996 --- [main] c.e.bookmyshow.BookmyshowApplication     : No active profile set, falling back to 1 default profile: "default"
+2023-09-20T16:11:08.635+05:30  INFO 18996 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-09-20T16:11:08.644+05:30  INFO 18996 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-20T16:11:08.645+05:30  INFO 18996 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-09-20T16:11:08.771+05:30  INFO 18996 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-09-20T16:11:08.772+05:30  INFO 18996 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1161 ms
+2023-09-20T16:11:08.836+05:30  WARN 18996 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'seatBookingController' defined in file [C:\X-Corps\x-corps-proj\SeatScreen\target\classes\com\example\bookmyshow\controller\SeatBookingController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'showSeatServiceImpl' defined in file [C:\X-Corps\x-corps-proj\SeatScreen\target\classes\com\example\bookmyshow\service\ShowSeatServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'com.example.bookmyshow.repository.ShowSeatRepo' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2023-09-20T16:11:08.843+05:30  INFO 18996 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-09-20T16:11:08.864+05:30  INFO 18996 --- [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-09-20T16:11:08.893+05:30 ERROR 18996 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.example.bookmyshow.service.ShowSeatServiceImpl required a bean of type 'com.example.bookmyshow.repository.ShowSeatRepo' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.example.bookmyshow.repository.ShowSeatRepo' in your configuration.
+
+2023-09-20T16:14:33.298+05:30  INFO 32776 --- [main] c.e.bookmyshow.BookmyshowApplication     : Starting BookmyshowApplication using Java 17.0.3 with PID 32776 (C:\X-Corps\x-corps-proj\SeatScreen\target\classes started by abhatia1 in C:\X-Corps\x-corps-proj\SeatScreen)
+2023-09-20T16:14:33.302+05:30  INFO 32776 --- [main] c.e.bookmyshow.BookmyshowApplication     : No active profile set, falling back to 1 default profile: "default"
+2023-09-20T16:14:33.801+05:30  INFO 32776 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data DynamoDB repositories in DEFAULT mode.
+2023-09-20T16:14:33.874+05:30  INFO 32776 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 66ms. Found 2 DynamoDB repository interfaces.
+2023-09-20T16:14:34.263+05:30  INFO 32776 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'dynamoDBConfig' of type [com.example.bookmyshow.config.DynamoDBConfig$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-20T16:14:34.352+05:30  INFO 32776 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'amazonAWSCredentials' of type [com.amazonaws.auth.BasicAWSCredentials] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-20T16:14:34.728+05:30  INFO 32776 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'amazonDynamoDB' of type [com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-20T16:14:34.756+05:30  INFO 32776 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'dynamoDB-DynamoDBMapperConfig' of type [com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-20T16:14:35.052+05:30  INFO 32776 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-09-20T16:14:35.062+05:30  INFO 32776 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-20T16:14:35.062+05:30  INFO 32776 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-09-20T16:14:35.131+05:30  INFO 32776 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-09-20T16:14:35.132+05:30  INFO 32776 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1779 ms
+2023-09-20T16:14:35.225+05:30  INFO 32776 --- [main] o.s.s.d.d.r.s.DynamoDBRepositoryFactory  : Spring Data DynamoDB Version: 5.1.0 (2.1)
+2023-09-20T16:14:35.225+05:30  INFO 32776 --- [main] o.s.s.d.d.r.s.DynamoDBRepositoryFactory  : Spring Data Version:          2.1.16.RELEASE
+2023-09-20T16:14:35.225+05:30  INFO 32776 --- [main] o.s.s.d.d.r.s.DynamoDBRepositoryFactory  : AWS SDK Version:              1.11.64
+2023-09-20T16:14:35.225+05:30  INFO 32776 --- [main] o.s.s.d.d.r.s.DynamoDBRepositoryFactory  : Java Version:                 17.0.3 - OpenJDK 64-Bit Server VM 17.0.3+7
+2023-09-20T16:14:35.225+05:30  INFO 32776 --- [main] o.s.s.d.d.r.s.DynamoDBRepositoryFactory  : Platform Details:             Windows 11 10.0
+2023-09-20T16:14:35.618+05:30  WARN 32776 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Ambiguous mapping. Cannot map 'seatBookingController' method 
+com.example.bookmyshow.controller.SeatBookingController#deleteScreenSeat(String)
+to {DELETE [/showSeats/{id}]}: There is already 'seatBookingController' bean method
+com.example.bookmyshow.controller.SeatBookingController#deleteShowSeat(String) mapped.
+2023-09-20T16:14:35.622+05:30  INFO 32776 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-09-20T16:14:35.634+05:30  INFO 32776 --- [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-09-20T16:14:35.653+05:30 ERROR 32776 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Ambiguous mapping. Cannot map 'seatBookingController' method 
+com.example.bookmyshow.controller.SeatBookingController#deleteScreenSeat(String)
+to {DELETE [/showSeats/{id}]}: There is already 'seatBookingController' bean method
+com.example.bookmyshow.controller.SeatBookingController#deleteShowSeat(String) mapped.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1770) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:973) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:942) ~[spring-context-6.0.11.jar:6.0.11]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:608) ~[spring-context-6.0.11.jar:6.0.11]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.1.3.jar:3.1.3]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734) ~[spring-boot-3.1.3.jar:3.1.3]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:436) ~[spring-boot-3.1.3.jar:3.1.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312) ~[spring-boot-3.1.3.jar:3.1.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-3.1.3.jar:3.1.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-3.1.3.jar:3.1.3]
+	at com.example.bookmyshow.BookmyshowApplication.main(BookmyshowApplication.java:11) ~[classes/:na]
+Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'seatBookingController' method 
+com.example.bookmyshow.controller.SeatBookingController#deleteScreenSeat(String)
+to {DELETE [/showSeats/{id}]}: There is already 'seatBookingController' bean method
+com.example.bookmyshow.controller.SeatBookingController#deleteShowSeat(String) mapped.
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.validateMethodMapping(AbstractHandlerMethodMapping.java:667) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:633) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:331) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:441) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:76) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lambda$detectHandlerMethods$2(AbstractHandlerMethodMapping.java:298) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:721) ~[na:na]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.detectHandlerMethods(AbstractHandlerMethodMapping.java:296) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.processCandidateBean(AbstractHandlerMethodMapping.java:265) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.initHandlerMethods(AbstractHandlerMethodMapping.java:224) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.afterPropertiesSet(AbstractHandlerMethodMapping.java:212) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.afterPropertiesSet(RequestMappingHandlerMapping.java:225) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1817) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1766) ~[spring-beans-6.0.11.jar:6.0.11]
+	... 16 common frames omitted
+
+2023-09-20T16:45:13.583+05:30  INFO 33304 --- [main] c.e.bookmyshow.BookmyshowApplication     : Starting BookmyshowApplication using Java 17.0.3 with PID 33304 (C:\X-Corps\x-corps-proj\SeatScreen\target\classes started by abhatia1 in C:\X-Corps\x-corps-proj\SeatScreen)
+2023-09-20T16:45:13.587+05:30  INFO 33304 --- [main] c.e.bookmyshow.BookmyshowApplication     : No active profile set, falling back to 1 default profile: "default"
+2023-09-20T16:45:14.089+05:30  INFO 33304 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data DynamoDB repositories in DEFAULT mode.
+2023-09-20T16:45:14.167+05:30  INFO 33304 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 70ms. Found 2 DynamoDB repository interfaces.
+2023-09-20T16:45:14.567+05:30  INFO 33304 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'dynamoDBConfig' of type [com.example.bookmyshow.config.DynamoDBConfig$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-20T16:45:14.642+05:30  INFO 33304 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'amazonAWSCredentials' of type [com.amazonaws.auth.BasicAWSCredentials] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-20T16:45:15.028+05:30  INFO 33304 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'amazonDynamoDB' of type [com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-20T16:45:15.053+05:30  INFO 33304 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'dynamoDB-DynamoDBMapperConfig' of type [com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-20T16:45:15.362+05:30  INFO 33304 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-09-20T16:45:15.372+05:30  INFO 33304 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-20T16:45:15.373+05:30  INFO 33304 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-09-20T16:45:15.446+05:30  INFO 33304 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-09-20T16:45:15.446+05:30  INFO 33304 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1804 ms
+2023-09-20T16:45:15.539+05:30  INFO 33304 --- [main] o.s.s.d.d.r.s.DynamoDBRepositoryFactory  : Spring Data DynamoDB Version: 5.1.0 (2.1)
+2023-09-20T16:45:15.539+05:30  INFO 33304 --- [main] o.s.s.d.d.r.s.DynamoDBRepositoryFactory  : Spring Data Version:          2.1.16.RELEASE
+2023-09-20T16:45:15.539+05:30  INFO 33304 --- [main] o.s.s.d.d.r.s.DynamoDBRepositoryFactory  : AWS SDK Version:              1.11.64
+2023-09-20T16:45:15.539+05:30  INFO 33304 --- [main] o.s.s.d.d.r.s.DynamoDBRepositoryFactory  : Java Version:                 17.0.3 - OpenJDK 64-Bit Server VM 17.0.3+7
+2023-09-20T16:45:15.540+05:30  INFO 33304 --- [main] o.s.s.d.d.r.s.DynamoDBRepositoryFactory  : Platform Details:             Windows 11 10.0
+2023-09-20T16:45:16.089+05:30  INFO 33304 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-09-20T16:45:16.095+05:30  INFO 33304 --- [main] d.d.r.u.Entity2DynamoDBTableSynchronizer : Checking repository classes with DynamoDB tables showSeat, screenSeat for ContextRefreshedEvent
+2023-09-20T16:45:16.098+05:30  INFO 33304 --- [main] c.e.bookmyshow.BookmyshowApplication     : Started BookmyshowApplication in 2.984 seconds (process running for 3.449)
+2023-09-20T16:45:41.296+05:30  INFO 33304 --- [SpringApplicationShutdownHook] d.d.r.u.Entity2DynamoDBTableSynchronizer : Checking repository classes with DynamoDB tables showSeat, screenSeat for ContextClosedEvent

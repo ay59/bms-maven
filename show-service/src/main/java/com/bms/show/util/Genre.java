@@ -1,0 +1,17 @@
+package com.bms.show.util;
+
+public enum Genre {
+	ACTION,
+	ANIMATION,
+	COMEDY,
+	CRIME,
+	DRAMA,
+	DOCUMENTARY,
+	EPIC,
+	FANTASY,
+	FICTION,
+	HORROR,
+	MYSTERY,
+	ROMANCE,
+	THRILLER,
+}
